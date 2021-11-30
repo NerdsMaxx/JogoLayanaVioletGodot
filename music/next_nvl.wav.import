@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/next_nvl.wav-894f00fa12703dd3ccc83896b4eac78b.sample"
+
+[deps]
+
+source_file="res://music/next_nvl.wav"
+dest_files=[ "res://.import/next_nvl.wav-894f00fa12703dd3ccc83896b4eac78b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Florian_Stracker_-_07_The_Maple_Sprout.mp3-79e0d970cf9d155ccc20b1a743545572.mp3str"
+
+[deps]
+
+source_file="res://music/Florian_Stracker_-_07_The_Maple_Sprout.mp3"
+dest_files=[ "res://.import/Florian_Stracker_-_07_The_Maple_Sprout.mp3-79e0d970cf9d155ccc20b1a743545572.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

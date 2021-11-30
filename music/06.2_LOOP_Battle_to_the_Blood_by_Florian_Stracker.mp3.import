@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/06.2_LOOP_Battle_to_the_Blood_by_Florian_Stracker.mp3-906dd2aefd1bb35a81af97552bd61f6d.mp3str"
+
+[deps]
+
+source_file="res://music/06.2_LOOP_Battle_to_the_Blood_by_Florian_Stracker.mp3"
+dest_files=[ "res://.import/06.2_LOOP_Battle_to_the_Blood_by_Florian_Stracker.mp3-906dd2aefd1bb35a81af97552bd61f6d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

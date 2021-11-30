@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/Pacifico-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/hud/heart.png" type="Texture" id=2]
+[ext_resource path="res://sprites/hud/clock.png" type="Texture" id=3]
+[ext_resource path="res://scripts/holder_timer.gd" type="Script" id=4]
+[ext_resource path="res://scripts/holder_life.gd" type="Script" id=5]
+[ext_resource path="res://sprites/misc/unmute.png" type="Texture" id=6]
+[ext_resource path="res://sprites/misc/mute.png" type="Texture" id=7]
+[ext_resource path="res://fonts/mary-jane.windlin.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="container" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="holder_life" type="Control" parent="container"]
+margin_right = 318.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="life" type="TextureRect" parent="container/holder_life"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="holder_timer" type="Control" parent="container"]
+margin_left = 322.0
+margin_right = 640.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+minute = 2
+second = 59
+
+[node name="timer" type="Timer" parent="container/holder_timer"]
+autostart = true
+
+[node name="icon" type="TextureRect" parent="container/holder_timer"]
+margin_left = 270.0
+margin_top = 16.0
+margin_right = 302.0
+margin_bottom = 48.0
+texture = ExtResource( 3 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="HBoxContainer" parent="container/holder_timer"]
+margin_left = 174.0
+margin_right = 258.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minute" type="Label" parent="container/holder_timer/container"]
+margin_top = 3.0
+margin_right = 34.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="two_points" type="Label" parent="container/holder_timer/container"]
+margin_left = 38.0
+margin_top = 3.0
+margin_right = 46.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = ":"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="second" type="Label" parent="container/holder_timer/container"]
+margin_left = 50.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound_mute" type="TextureRect" parent="container/holder_timer"]
+margin_left = 241.0
+margin_top = 331.0
+margin_right = 273.0
+margin_bottom = 363.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound_unmute" type="Sprite" parent="container/holder_timer"]
+position = Vector2( 257, 347 )
+texture = ExtResource( 6 )
+
+[node name="letterM" type="Label" parent="container/holder_timer"]
+margin_left = 214.0
+margin_top = 332.0
+margin_right = 239.0
+margin_bottom = 367.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -2
+custom_constants/line_spacing = 0
+custom_fonts/font = SubResource( 2 )
+text = "M"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="container/holder_timer/timer" to="container/holder_timer" method="_on_timer_timeout"]

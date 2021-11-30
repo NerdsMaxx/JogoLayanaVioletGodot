@@ -1,0 +1,153 @@
+[gd_scene load_steps=75 format=2]
+
+[ext_resource path="res://sprites/golem_tree/dead (2).png" type="Texture" id=1]
+[ext_resource path="res://sprites/golem_tree/dead (1).png" type="Texture" id=2]
+[ext_resource path="res://sprites/golem_tree/dead (3).png" type="Texture" id=3]
+[ext_resource path="res://scripts/golem-tree.gd" type="Script" id=4]
+[ext_resource path="res://sprites/golem_tree/walk (12).png" type="Texture" id=17]
+[ext_resource path="res://sprites/golem_tree/idle (12).png" type="Texture" id=18]
+[ext_resource path="res://sprites/golem_tree/dead (10).png" type="Texture" id=19]
+[ext_resource path="res://sprites/golem_tree/hurt (10).png" type="Texture" id=20]
+[ext_resource path="res://sprites/golem_tree/hurt (1).png" type="Texture" id=21]
+[ext_resource path="res://sprites/golem_tree/dead (12).png" type="Texture" id=22]
+[ext_resource path="res://sprites/golem_tree/idle (11).png" type="Texture" id=23]
+[ext_resource path="res://sprites/golem_tree/walk (5).png" type="Texture" id=24]
+[ext_resource path="res://sprites/golem_tree/walk (16).png" type="Texture" id=25]
+[ext_resource path="res://sprites/golem_tree/walk (17).png" type="Texture" id=26]
+[ext_resource path="res://sprites/golem_tree/dead (9).png" type="Texture" id=27]
+[ext_resource path="res://sprites/golem_tree/walk (3).png" type="Texture" id=28]
+[ext_resource path="res://sprites/golem_tree/walk (18).png" type="Texture" id=29]
+[ext_resource path="res://sprites/golem_tree/walk (6).png" type="Texture" id=30]
+[ext_resource path="res://sprites/golem_tree/walk (8).png" type="Texture" id=31]
+[ext_resource path="res://sprites/golem_tree/walk (1).png" type="Texture" id=32]
+[ext_resource path="res://sprites/golem_tree/idle (5).png" type="Texture" id=33]
+[ext_resource path="res://sprites/golem_tree/walk (19).png" type="Texture" id=34]
+[ext_resource path="res://sprites/golem_tree/dead (14).png" type="Texture" id=35]
+[ext_resource path="res://sprites/golem_tree/walk (7).png" type="Texture" id=36]
+[ext_resource path="res://sprites/golem_tree/walk (20).png" type="Texture" id=37]
+[ext_resource path="res://sprites/golem_tree/walk (21).png" type="Texture" id=38]
+[ext_resource path="res://sprites/golem_tree/idle (8).png" type="Texture" id=39]
+[ext_resource path="res://sprites/golem_tree/walk (14).png" type="Texture" id=40]
+[ext_resource path="res://sprites/golem_tree/walk (22).png" type="Texture" id=41]
+[ext_resource path="res://sprites/golem_tree/hurt (7).png" type="Texture" id=42]
+[ext_resource path="res://sprites/golem_tree/idle (16).png" type="Texture" id=43]
+[ext_resource path="res://sprites/golem_tree/hurt (6).png" type="Texture" id=44]
+[ext_resource path="res://sprites/golem_tree/idle (17).png" type="Texture" id=45]
+[ext_resource path="res://sprites/golem_tree/walk (4).png" type="Texture" id=46]
+[ext_resource path="res://sprites/golem_tree/hurt (8).png" type="Texture" id=47]
+[ext_resource path="res://sprites/golem_tree/hurt (12).png" type="Texture" id=48]
+[ext_resource path="res://sprites/golem_tree/idle (7).png" type="Texture" id=49]
+[ext_resource path="res://sprites/golem_tree/idle (9).png" type="Texture" id=50]
+[ext_resource path="res://sprites/golem_tree/dead (4).png" type="Texture" id=51]
+[ext_resource path="res://sprites/golem_tree/dead (7).png" type="Texture" id=52]
+[ext_resource path="res://sprites/golem_tree/idle (13).png" type="Texture" id=53]
+[ext_resource path="res://sprites/golem_tree/dead (15).png" type="Texture" id=54]
+[ext_resource path="res://sprites/golem_tree/idle (2).png" type="Texture" id=55]
+[ext_resource path="res://sprites/golem_tree/idle (14).png" type="Texture" id=56]
+[ext_resource path="res://sprites/golem_tree/hurt (5).png" type="Texture" id=57]
+[ext_resource path="res://sprites/golem_tree/hurt (11).png" type="Texture" id=58]
+[ext_resource path="res://sprites/golem_tree/hurt (9).png" type="Texture" id=59]
+[ext_resource path="res://sprites/golem_tree/dead (5).png" type="Texture" id=60]
+[ext_resource path="res://sprites/golem_tree/hurt (2).png" type="Texture" id=61]
+[ext_resource path="res://sprites/golem_tree/dead (13).png" type="Texture" id=62]
+[ext_resource path="res://sprites/golem_tree/hurt (3).png" type="Texture" id=63]
+[ext_resource path="res://sprites/golem_tree/hurt (4).png" type="Texture" id=64]
+[ext_resource path="res://sprites/golem_tree/idle (6).png" type="Texture" id=65]
+[ext_resource path="res://sprites/golem_tree/walk (9).png" type="Texture" id=66]
+[ext_resource path="res://sprites/golem_tree/walk (10).png" type="Texture" id=67]
+[ext_resource path="res://sprites/golem_tree/walk (11).png" type="Texture" id=68]
+[ext_resource path="res://sprites/golem_tree/walk (13).png" type="Texture" id=69]
+[ext_resource path="res://sprites/golem_tree/idle (18).png" type="Texture" id=70]
+[ext_resource path="res://sprites/golem_tree/walk (15).png" type="Texture" id=71]
+[ext_resource path="res://sprites/golem_tree/idle (4).png" type="Texture" id=72]
+[ext_resource path="res://sprites/golem_tree/dead (11).png" type="Texture" id=73]
+[ext_resource path="res://sprites/golem_tree/idle (10).png" type="Texture" id=74]
+[ext_resource path="res://sprites/golem_tree/walk (2).png" type="Texture" id=75]
+[ext_resource path="res://sprites/golem_tree/idle (1).png" type="Texture" id=76]
+[ext_resource path="res://sprites/golem_tree/idle (3).png" type="Texture" id=77]
+[ext_resource path="res://sprites/golem_tree/idle (15).png" type="Texture" id=78]
+[ext_resource path="res://sprites/golem_tree/dead (8).png" type="Texture" id=79]
+[ext_resource path="res://sprites/golem_tree/dead (6).png" type="Texture" id=80]
+[ext_resource path="res://sprites/golem_tree/walk (24).png" type="Texture" id=81]
+[ext_resource path="res://sprites/golem_tree/walk (23).png" type="Texture" id=82]
+[ext_resource path="res://scenes/hitbox.tscn" type="PackedScene" id=83]
+[ext_resource path="res://music/golem-tree_hit.mp3" type="AudioStream" id=84]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 76 ), ExtResource( 55 ), ExtResource( 77 ), ExtResource( 72 ), ExtResource( 33 ), ExtResource( 65 ), ExtResource( 49 ), ExtResource( 39 ), ExtResource( 50 ), ExtResource( 74 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 53 ), ExtResource( 56 ), ExtResource( 78 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 70 ) ],
+"loop": false,
+"name": "idle",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 80 ), ExtResource( 52 ), ExtResource( 79 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 73 ), ExtResource( 22 ), ExtResource( 62 ), ExtResource( 35 ), ExtResource( 54 ) ],
+"loop": false,
+"name": "dead",
+"speed": 7.5
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 75 ), ExtResource( 28 ), ExtResource( 46 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 31 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 17 ), ExtResource( 69 ), ExtResource( 40 ), ExtResource( 71 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 41 ), ExtResource( 82 ), ExtResource( 81 ) ],
+"loop": true,
+"name": "walk",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 61 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 57 ), ExtResource( 44 ), ExtResource( 42 ), ExtResource( 47 ), ExtResource( 59 ), ExtResource( 20 ), ExtResource( 58 ), ExtResource( 48 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 25.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 8.5
+
+[node name="golem-tree" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 4 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 17
+playing = true
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 7 )
+shape = SubResource( 2 )
+
+[node name="hitbox" parent="." instance=ExtResource( 83 )]
+modulate = Color( 0, 0.00784314, 1, 1 )
+position = Vector2( -1.23439, -14.7024 )
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="hit" type="AudioStreamPlayer2D" parent="music"]
+stream = ExtResource( 84 )
+
+[node name="timers" type="Node2D" parent="."]
+
+[node name="timer_damage" type="Timer" parent="timers"]
+wait_time = 0.209
+one_shot = true
+
+[node name="timer_dead" type="Timer" parent="timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="raycast" type="Node2D" parent="."]
+
+[node name="floor" type="RayCast2D" parent="raycast"]
+position = Vector2( 10, 25 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="wall" type="RayCast2D" parent="raycast"]
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 21
+
+[connection signal="animation_finished" from="animated_sprite" to="." method="_on_animated_sprite_animation_finished"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="timers/timer_damage" to="." method="_on_timer_damage_timeout"]
+[connection signal="timeout" from="timers/timer_dead" to="." method="_on_timer_dead_timeout"]

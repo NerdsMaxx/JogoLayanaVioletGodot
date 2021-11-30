@@ -1,0 +1,704 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://music/Florian_Stracker_-_07_The_Maple_Sprout.mp3" type="AudioStream" id=1]
+[ext_resource path="res://scripts/start_screen.gd" type="Script" id=2]
+[ext_resource path="res://sprites/map/florest_tiles.png" type="Texture" id=3]
+[ext_resource path="res://sprites/map/bg1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/map/bg4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/map/bg3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/map/bg2.png" type="Texture" id=7]
+[ext_resource path="res://fonts/mary-jane.windlin.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(1.0, 0.0);
+uniform float speed = 0.02f;
+
+void fragment(){
+	COLOR = texture(TEXTURE, UV + (direction * TIME * speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/direction = Vector2( 1, 0 )
+shader_param/speed = 0.02
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 32, 0, 21.6308, 19.0266, 0, 32, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 26.9115, 0, 32, 5.55266, 32, 32, 0, 32, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 5.0704, 4.1059, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 5.9766, 9.89846, 5.9766, 0, 32, 0, 32, 9.89846, 26.5201, 10.0923, 19.7016, 15.8533, 19.7369, 32, 12.1784, 32, 12.1784, 10.0923 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 9.87424, 0, 9.87424 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 9.70026, 26.6299, 9.70026, 20.0081, 16.8065, 20.0081, 32, 12.0943, 32, 12.0943, 16.8065, 5.63412, 10.1848, 0, 10.1848 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 5.8636, 6.00325, 0, 27.2224, 0, 32, 6.34586, 30.5982, 25.636, 23.3644, 29.9763, 10.3436, 30.9408, 0, 21.2957 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 32, 0, 32, 32, 8.08449, 18.4479, 0, 0 )
+
+[sub_resource type="TileSet" id=17]
+1/name = "grass_1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "grass_2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 6 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "grass_9"
+3/texture = ExtResource( 3 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 96, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 7 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "grass_10"
+4/texture = ExtResource( 3 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 128, 0, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 12 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "grass_3"
+5/texture = ExtResource( 3 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 32, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 13 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "grass_4"
+6/texture = ExtResource( 3 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 32, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "grass_5"
+7/texture = ExtResource( 3 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 64, 32, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 14 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "grass_11"
+8/texture = ExtResource( 3 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 96, 32, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 15 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "grass_6"
+9/texture = ExtResource( 3 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 64, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 16 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "grass_7"
+10/texture = ExtResource( 3 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 32, 64, 32, 32 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 4 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "grass_8"
+11/texture = ExtResource( 3 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 64, 64, 32, 32 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 5 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+31/name = "grass_0"
+31/texture = ExtResource( 3 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 0, 0, 32, 32 )
+31/tile_mode = 0
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shape_offset = Vector2( 0, 0 )
+31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape = SubResource( 8 )
+31/shape_one_way = false
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+31/z_index = 0
+32/name = "water_0"
+32/texture = ExtResource( 3 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 128, 32, 32, 32 )
+32/tile_mode = 0
+32/occluder_offset = Vector2( 0, 0 )
+32/navigation_offset = Vector2( 0, 0 )
+32/shape_offset = Vector2( 0, 0 )
+32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+32/shape_one_way = false
+32/shape_one_way_margin = 0.0
+32/shapes = [  ]
+32/z_index = 0
+33/name = "water_1"
+33/texture = ExtResource( 3 )
+33/tex_offset = Vector2( 0, 0 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 128, 64, 32, 32 )
+33/tile_mode = 0
+33/occluder_offset = Vector2( 0, 0 )
+33/navigation_offset = Vector2( 0, 0 )
+33/shape_offset = Vector2( 0, 0 )
+33/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+33/shape_one_way = false
+33/shape_one_way_margin = 0.0
+33/shapes = [  ]
+33/z_index = 0
+34/name = "platform_0"
+34/texture = ExtResource( 3 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 96, 96, 32, 32 )
+34/tile_mode = 0
+34/occluder_offset = Vector2( 0, 0 )
+34/navigation_offset = Vector2( 0, 0 )
+34/shape_offset = Vector2( 0, 0 )
+34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+34/shape = SubResource( 9 )
+34/shape_one_way = false
+34/shape_one_way_margin = 1.0
+34/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+34/z_index = 0
+35/name = "platform_1"
+35/texture = ExtResource( 3 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 128, 96, 32, 32 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 0, 0 )
+35/navigation_offset = Vector2( 0, 0 )
+35/shape_offset = Vector2( 0, 0 )
+35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape = SubResource( 10 )
+35/shape_one_way = false
+35/shape_one_way_margin = 1.0
+35/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+35/z_index = 0
+36/name = "platform_2"
+36/texture = ExtResource( 3 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 160, 96, 32, 32 )
+36/tile_mode = 0
+36/occluder_offset = Vector2( 0, 0 )
+36/navigation_offset = Vector2( 0, 0 )
+36/shape_offset = Vector2( 0, 0 )
+36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+36/shape = SubResource( 11 )
+36/shape_one_way = false
+36/shape_one_way_margin = 1.0
+36/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+36/z_index = 0
+37/name = "platform_3"
+37/texture = ExtResource( 3 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 192, 96, 32, 32 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 0, 0 )
+37/navigation_offset = Vector2( 0, 0 )
+37/shape_offset = Vector2( 0, 0 )
+37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape_one_way = false
+37/shape_one_way_margin = 0.0
+37/shapes = [  ]
+37/z_index = 0
+47/name = "water_2"
+47/texture = ExtResource( 3 )
+47/tex_offset = Vector2( 0, 0 )
+47/modulate = Color( 1, 1, 1, 1 )
+47/region = Rect2( 224, 96, 32, 32 )
+47/tile_mode = 0
+47/occluder_offset = Vector2( 0, 0 )
+47/navigation_offset = Vector2( 0, 0 )
+47/shape_offset = Vector2( 0, 0 )
+47/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+47/shape_one_way = false
+47/shape_one_way_margin = 0.0
+47/shapes = [  ]
+47/z_index = 0
+48/name = "water_3"
+48/texture = ExtResource( 3 )
+48/tex_offset = Vector2( 0, 0 )
+48/modulate = Color( 1, 1, 1, 1 )
+48/region = Rect2( 256, 96, 32, 32 )
+48/tile_mode = 0
+48/occluder_offset = Vector2( 0, 0 )
+48/navigation_offset = Vector2( 0, 0 )
+48/shape_offset = Vector2( 0, 0 )
+48/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+48/shape_one_way = false
+48/shape_one_way_margin = 0.0
+48/shapes = [  ]
+48/z_index = 0
+49/name = "cavern_0"
+49/texture = ExtResource( 3 )
+49/tex_offset = Vector2( 0, 0 )
+49/modulate = Color( 1, 1, 1, 1 )
+49/region = Rect2( 0, 128, 96, 32 )
+49/tile_mode = 0
+49/occluder_offset = Vector2( 0, 0 )
+49/navigation_offset = Vector2( 0, 0 )
+49/shape_offset = Vector2( 0, 0 )
+49/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+49/shape_one_way = false
+49/shape_one_way_margin = 0.0
+49/shapes = [  ]
+49/z_index = 0
+50/name = "cavern_1"
+50/texture = ExtResource( 3 )
+50/tex_offset = Vector2( 0, 0 )
+50/modulate = Color( 1, 1, 1, 1 )
+50/region = Rect2( 96, 128, 96, 32 )
+50/tile_mode = 0
+50/occluder_offset = Vector2( 0, 0 )
+50/navigation_offset = Vector2( 0, 0 )
+50/shape_offset = Vector2( 0, 0 )
+50/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+50/shape_one_way = false
+50/shape_one_way_margin = 0.0
+50/shapes = [  ]
+50/z_index = 0
+51/name = "cavern_2"
+51/texture = ExtResource( 3 )
+51/tex_offset = Vector2( 0, 0 )
+51/modulate = Color( 1, 1, 1, 1 )
+51/region = Rect2( 192, 128, 96, 32 )
+51/tile_mode = 0
+51/occluder_offset = Vector2( 0, 0 )
+51/navigation_offset = Vector2( 0, 0 )
+51/shape_offset = Vector2( 0, 0 )
+51/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+51/shape_one_way = false
+51/shape_one_way_margin = 0.0
+51/shapes = [  ]
+51/z_index = 0
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=23]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 18 )
+Button/styles/focus = SubResource( 19 )
+Button/styles/hover = SubResource( 20 )
+Button/styles/normal = SubResource( 21 )
+Button/styles/pressed = SubResource( 22 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 27
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 35
+font_data = ExtResource( 8 )
+
+[node name="start_screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 0.3, 0.4 )
+transform = Transform2D( 0.3, 0, 0, 0.4, 0, 0 )
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1152, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg4" type="Sprite" parent="ParallaxBackground/sky"]
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="fog" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1280, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg2" type="Sprite" parent="ParallaxBackground/fog"]
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1152, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg3" type="Sprite" parent="ParallaxBackground/cloud"]
+material = SubResource( 2 )
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg1" type="Sprite" parent="ParallaxBackground/mountain"]
+position = Vector2( 2.37839, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 0, 0, 0, 0.376471 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap_front" type="TileMap" parent="."]
+position = Vector2( 1.05946, 113.363 )
+tile_set = SubResource( 17 )
+cell_size = Vector2( 32, 32 )
+collision_mask = 6
+format = 1
+tile_data = PoolIntArray( -196609, 6, 0, -262144, 6, 0, -262143, 6, 0, -262142, 6, 0, -262141, 6, 0, -262140, 6, 0, -262139, 6, 0, -262138, 6, 0, -262137, 6, 0, -262136, 6, 0, -262135, 6, 0, -262134, 6, 0, -262133, 6, 0, -262132, 6, 0, -262131, 6, 0, -262130, 6, 0, -262129, 6, 0, -262128, 6, 0, -262127, 6, 0, -262126, 6, 0, -262125, 6, 0, -262124, 6, 0, -262123, 6, 0, -262122, 6, 0, -262121, 6, 0, -262120, 6, 0, -262119, 6, 0, -262118, 6, 0, -131073, 6, 0, -196608, 6, 0, -196607, 10, 0, -196606, 10, 0, -196605, 10, 0, -196604, 10, 0, -196603, 10, 0, -196602, 10, 0, -196601, 10, 0, -196600, 10, 0, -196599, 10, 0, -196598, 10, 0, -196597, 10, 0, -196596, 10, 0, -196595, 10, 0, -196594, 10, 0, -196593, 10, 0, -196592, 10, 0, -196591, 10, 0, -196590, 10, 0, -196589, -1073741818, 0, -196588, 6, 0, -196587, 6, 0, -196586, 6, 0, -196585, 6, 0, -196584, 6, 0, -196583, 6, 0, -196582, 6, 0, -65537, 6, 0, -131072, 7, 0, -131053, -1610612726, 0, -131052, 6, 0, -131051, 6, 0, -131050, 6, 0, -131049, 6, 0, -131048, 6, 0, -131047, 6, 0, -131046, 6, 0, -1, 6, 0, -65536, 7, 0, -65517, -1610612726, 0, -65516, 6, 0, -65515, 6, 0, -65514, 6, 0, -65513, 6, 0, -65512, 6, 0, -65511, 6, 0, -65510, 6, 0, 65535, 6, 0, 0, 7, 0, 19, -1610612726, 0, 20, 6, 0, 21, 6, 0, 22, 6, 0, 23, 6, 0, 24, 6, 0, 25, 6, 0, 26, 6, 0, 131071, 6, 0, 65536, 7, 0, 65555, -1610612726, 0, 65556, 6, 0, 65557, 6, 0, 65558, 6, 0, 65559, 6, 0, 65560, 6, 0, 65561, 6, 0, 65562, 6, 0, 196607, 6, 0, 131072, -1073741814, 0, 131091, -1610612726, 0, 131092, -1073741818, 0, 131093, 6, 0, 131094, 6, 0, 131095, 6, 0, 131096, 6, 0, 131097, 6, 0, 131098, 6, 0, 262143, 6, 0, 196608, -1073741814, 0, 196609, 49, 0, 196627, -1610612726, 0, 196628, -1073741818, 0, 196629, -1073741818, 0, 196630, 6, 0, 196631, 6, 0, 196632, 6, 0, 196633, 6, 0, 196634, 6, 0, 327679, 6, 0, 262144, -1073741814, 0, 262145, 50, 0, 262163, -1610612726, 0, 262164, 6, 0, 262165, -1073741818, 0, 262166, 6, 0, 262167, 6, 0, 262168, 6, 0, 262169, 6, 0, 262170, 6, 0, 393215, 6, 0, 327680, -1073741814, 0, 327681, 51, 0, 327699, -1610612726, 0, 327700, 6, 0, 327701, -1073741818, 0, 327702, 6, 0, 327703, 6, 0, 327704, 6, 0, 327705, 6, 0, 327706, 6, 0, 458751, 6, 0, 393216, -1073741818, 0, 393217, -1073741817, 0, 393218, -1073741817, 0, 393219, -1073741817, 0, 393220, -1073741817, 0, 393221, 34, 0, 393222, 536870948, 0, 393223, 536870948, 0, 393224, 536870948, 0, 393225, 36, 0, 393226, 36, 0, 393227, 36, 0, 393228, 36, 0, 393229, 36, 0, 393230, 536870946, 0, 393231, -1073741817, 0, 393232, -1073741817, 0, 393233, -1073741817, 0, 393234, -1073741817, 0, 393235, -1073741818, 0, 393236, 6, 0, 393237, -1073741818, 0, 393238, 6, 0, 393239, 6, 0, 393240, 6, 0, 393241, 6, 0, 393242, 6, 0, 524287, 6, 0, 458752, -1073741818, 0, 458753, -1073741818, 0, 458754, -1073741818, 0, 458755, 6, 0, 458756, 6, 0, 458757, 47, 0, 458758, 47, 0, 458759, 32, 0, 458760, 32, 0, 458761, 33, 0, 458762, 32, 0, 458763, 47, 0, 458764, 47, 0, 458765, 33, 0, 458766, 33, 0, 458767, 6, 0, 458768, 6, 0, 458769, 6, 0, 458770, 6, 0, 458771, -1073741818, 0, 458772, -1073741818, 0, 458773, -1073741818, 0, 458774, 6, 0, 458775, 6, 0, 458776, 6, 0, 458777, 6, 0, 458778, 6, 0, 589823, 6, 0, 524288, 5, 0, 524289, 6, 0, 524290, 6, 0, 524291, 6, 0, 524292, 6, 0, 524293, 48, 0, 524294, 47, 0, 524295, 33, 0, 524296, 48, 0, 524297, 48, 0, 524298, 47, 0, 524299, 48, 0, 524300, 47, 0, 524301, 47, 0, 524302, 47, 0, 524303, 6, 0, 524304, 6, 0, 524305, -1073741818, 0, 524306, -1073741818, 0, 524307, -1073741818, 0, 524308, -1073741818, 0, 524309, 6, 0, 524310, 6, 0, 524311, 6, 0, 524312, 6, 0, 524313, 6, 0, 524314, 6, 0, 655359, 6, 0, 589824, 5, 0, 589825, -1073741818, 0, 589826, -1073741818, 0, 589827, -1073741818, 0, 589828, -1073741818, 0, 589829, -1073741818, 0, 589830, 6, 0, 589831, 6, 0, 589832, 6, 0, 589833, 6, 0, 589834, 6, 0, 589835, 6, 0, 589836, 6, 0, 589837, 6, 0, 589838, 6, 0, 589839, 6, 0, 589840, 6, 0, 589841, 6, 0, 589842, -1073741818, 0, 589843, -1073741818, 0, 589844, -1073741818, 0, 589845, 6, 0, 589846, 6, 0, 589847, 6, 0, 589848, 6, 0, 589849, 6, 0, 589850, 6, 0, 720895, 6, 0, 655360, 5, 0, 655361, 6, 0, 655362, 6, 0, 655363, 6, 0, 655364, 6, 0, 655365, 6, 0, 655366, 6, 0, 655367, 6, 0, 655368, 6, 0, 655369, 6, 0, 655370, 6, 0, 655371, 6, 0, 655372, 6, 0, 655373, 6, 0, 655374, 6, 0, 655375, 6, 0, 655376, 6, 0, 655377, 6, 0, 655378, 6, 0, 655379, 6, 0, 655380, 6, 0, 655381, 6, 0, 655382, 6, 0, 655383, 6, 0, 655384, 6, 0, 655385, 6, 0, 655386, 6, 0, 786431, 6, 0, 720896, 5, 0, 720897, 6, 0, 720898, 6, 0, 720899, 6, 0, 720900, 6, 0, 720901, 6, 0, 720902, 6, 0, 720903, 6, 0, 720904, 6, 0, 720905, 6, 0, 720906, 6, 0, 720907, 6, 0, 720908, 6, 0, 720909, 6, 0, 720910, 6, 0, 720911, 6, 0, 720912, 6, 0, 720913, 6, 0, 720914, 6, 0, 720915, 6, 0, 720916, 6, 0, 720917, 6, 0, 720918, 6, 0, 720919, 6, 0, 720920, 6, 0, 720921, 6, 0, 720922, 6, 0 )
+
+[node name="Credits" type="Button" parent="."]
+margin_left = 435.0
+margin_top = 266.0
+margin_right = 650.0
+margin_bottom = 306.0
+focus_neighbour_bottom = NodePath("../VBoxContainer/Start")
+theme = SubResource( 23 )
+custom_colors/font_color_disabled = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.227451, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.14902, 0.172549, 0.231373, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Creditos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -82.0
+margin_right = 124.0
+margin_bottom = 194.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_top = 80.0
+margin_right = 256.0
+margin_bottom = 116.0
+focus_neighbour_top = NodePath("../../Credits")
+theme = SubResource( 23 )
+custom_colors/font_color_disabled = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.227451, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.14902, 0.172549, 0.231373, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Iniciar"
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 256.0
+margin_bottom = 156.0
+theme = SubResource( 23 )
+custom_colors/font_color_disabled = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.227451, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.14902, 0.172549, 0.231373, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Controles"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 160.0
+margin_right = 256.0
+margin_bottom = 196.0
+theme = SubResource( 23 )
+custom_colors/font_color_disabled = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.227451, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0.14902, 0.172549, 0.231373, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Sair"
+
+[node name="Title" type="Label" parent="."]
+margin_left = 203.0
+margin_top = 58.0
+margin_right = 432.0
+margin_bottom = 153.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -6
+custom_fonts/font = SubResource( 25 )
+text = "Layana Violet
+ The Rescue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

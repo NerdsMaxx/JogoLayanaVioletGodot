@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/misc/placa.png" type="Texture" id=1]
+[ext_resource path="res://scripts/board.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Caveat-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.9565, 22.5459 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="board" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="collision_shape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="timer" type="Node2D" parent="."]
+
+[node name="clear_msg" type="Timer" parent="timer"]
+one_shot = true
+
+[node name="text" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -163.0
+margin_top = -184.0
+margin_right = 163.0
+margin_bottom = -24.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="timer/clear_msg" to="." method="_on_clear_msg_timeout"]

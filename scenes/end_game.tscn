@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://add/end_game.tres" type="TileSet" id=1]
+[ext_resource path="res://sprites/map/end_game.png" type="Texture" id=2]
+[ext_resource path="res://sprites/map/bg3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/map/bg2.png" type="Texture" id=4]
+[ext_resource path="res://fonts/mary-jane.windlin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/map/bg1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/map/bg4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/transition_out.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/end_game.gd" type="Script" id=10]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 direction = vec2(1.0, 0.0);
+uniform float speed = 0.02f;
+
+void fragment(){
+	COLOR = texture(TEXTURE, UV + (direction * TIME * speed));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/direction = Vector2( 1, 0 )
+shader_param/speed = 0.02
+
+[sub_resource type="DynamicFont" id=3]
+size = 29
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="end_game" type="Node2D"]
+position = Vector2( -3.38782, 115.041 )
+script = ExtResource( 10 )
+
+[node name="end_game" type="Sprite" parent="."]
+position = Vector2( 0, -140 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="TileMap_front" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_mask = 6
+format = 1
+tile_data = PoolIntArray( -196609, 6, 0, -262144, 6, 0, -262143, 6, 0, -262142, 6, 0, -262141, 6, 0, -262140, 6, 0, -262139, 6, 0, -262138, 6, 0, -262137, 6, 0, -262136, 6, 0, -262135, 6, 0, -262134, 6, 0, -262133, 6, 0, -262132, 6, 0, -262131, 6, 0, -262130, 6, 0, -262129, 6, 0, -262128, 6, 0, -262127, 6, 0, -262126, 6, 0, -262125, 6, 0, -262124, 6, 0, -131073, 6, 0, -196608, 6, 0, -196607, 10, 0, -196606, 10, 0, -196605, 10, 0, -196604, 10, 0, -196603, 10, 0, -196602, 10, 0, -196601, 10, 0, -196600, 10, 0, -196599, 10, 0, -196598, 10, 0, -196597, 10, 0, -196596, 10, 0, -196595, 10, 0, -196594, 10, 0, -196593, 10, 0, -196592, 10, 0, -196591, 10, 0, -196590, 10, 0, -196589, 6, 0, -196588, 6, 0, -65537, 6, 0, -131072, 7, 0, -131053, 1610612743, 0, -131052, 6, 0, -1, 6, 0, -65536, 7, 0, -65517, 1610612743, 0, -65516, 6, 0, 65535, 6, 0, 0, 7, 0, 19, 1610612743, 0, 20, 6, 0, 131071, 6, 0, 65536, 7, 0, 65555, 1610612743, 0, 65556, 6, 0, 196607, 6, 0, 131072, 7, 0, 131091, 1610612743, 0, 131092, 6, 0, 262143, 6, 0, 196608, 7, 0, 196627, 1610612743, 0, 196628, 6, 0, 327679, 6, 0, 262144, 7, 0, 262163, 1610612743, 0, 262164, 6, 0, 393215, 6, 0, 327680, 7, 0, 327699, 1610612743, 0, 327700, 6, 0, 458751, 6, 0, 393216, 7, 0, 393235, 1610612743, 0, 393236, 6, 0, 524287, 6, 0, 458752, 4, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 3, 0, 458772, 6, 0, 589823, 6, 0, 524288, 5, 0, 524289, 6, 0, 524290, 6, 0, 524291, 6, 0, 524292, 6, 0, 524293, 6, 0, 524294, 6, 0, 524295, 6, 0, 524296, 6, 0, 524297, 6, 0, 524298, 6, 0, 524299, 6, 0, 524300, 6, 0, 524301, 6, 0, 524302, 6, 0, 524303, 6, 0, 524304, 6, 0, 524305, 6, 0, 524306, 6, 0, 524307, 6, 0, 524308, 6, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 0.5, 0.5 )
+transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1152, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg4" type="Sprite" parent="ParallaxBackground/sky"]
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="fog" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1280, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg2" type="Sprite" parent="ParallaxBackground/fog"]
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1152, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg3" type="Sprite" parent="ParallaxBackground/cloud"]
+material = SubResource( 2 )
+position = Vector2( 0, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -13.5104, 465.798 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 1280, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bg1" type="Sprite" parent="ParallaxBackground/mountain"]
+position = Vector2( 2.37839, -375 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 67.0
+margin_top = -51.0
+margin_right = 579.0
+margin_bottom = 77.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -6
+custom_fonts/font = SubResource( 3 )
+text = "Voce conseguiu!
+Salvou seu vilarejo dos golems."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="transition_out" parent="." instance=ExtResource( 9 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

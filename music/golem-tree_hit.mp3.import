@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/golem-tree_hit.mp3-b785f7f4223f46d0d4d36980fe74f12b.mp3str"
+
+[deps]
+
+source_file="res://music/golem-tree_hit.mp3"
+dest_files=[ "res://.import/golem-tree_hit.mp3-b785f7f4223f46d0d4d36980fe74f12b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

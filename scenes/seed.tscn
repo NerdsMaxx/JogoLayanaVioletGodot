@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/projectile/Bullet.png" type="Texture" id=1]
+[ext_resource path="res://sprites/projectile/bullet_piece_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/projectile/bullet_piece_1.png" type="Texture" id=3]
+[ext_resource path="res://scripts/seed.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "seed",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "destroy",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.34869
+
+[node name="seed" type="Area2D"]
+collision_layer = 4
+collision_mask = 64
+script = ExtResource( 4 )
+
+[node name="bullet" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "seed"
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="clear" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -1.19209e-06, -0.148819 )
+scale = Vector2( 0.454331, 0.44937 )
+
+[connection signal="screen_exited" from="clear" to="." method="_on_clear_screen_exited"]

@@ -1,0 +1,152 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scripts/plant.gd" type="Script" id=1]
+[ext_resource path="res://sprites/plant/hit_4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/plant/hit_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/plant/idle_5.png" type="Texture" id=8]
+[ext_resource path="res://sprites/plant/idle_7.png" type="Texture" id=9]
+[ext_resource path="res://sprites/plant/hit_3.png" type="Texture" id=10]
+[ext_resource path="res://sprites/plant/idle_6.png" type="Texture" id=11]
+[ext_resource path="res://sprites/plant/idle_8.png" type="Texture" id=12]
+[ext_resource path="res://sprites/plant/hit_0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/plant/hit_2.png" type="Texture" id=14]
+[ext_resource path="res://sprites/plant/idle_0.png" type="Texture" id=15]
+[ext_resource path="res://sprites/plant/attack_4.png" type="Texture" id=16]
+[ext_resource path="res://sprites/plant/idle_10.png" type="Texture" id=17]
+[ext_resource path="res://sprites/plant/attack_6.png" type="Texture" id=18]
+[ext_resource path="res://sprites/plant/idle_9.png" type="Texture" id=19]
+[ext_resource path="res://sprites/plant/attack_3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/plant/attack_0.png" type="Texture" id=21]
+[ext_resource path="res://sprites/plant/attack_5.png" type="Texture" id=22]
+[ext_resource path="res://sprites/plant/attack_7.png" type="Texture" id=23]
+[ext_resource path="res://sprites/plant/attack_1.png" type="Texture" id=24]
+[ext_resource path="res://sprites/plant/attack_2.png" type="Texture" id=25]
+[ext_resource path="res://scenes/hitbox.tscn" type="PackedScene" id=70]
+[ext_resource path="res://music/golem-tree_hit.mp3" type="AudioStream" id=72]
+
+[sub_resource type="Animation" id=1]
+resource_name = "attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 21 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 23 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 17 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 9.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 240, 42 )
+
+[node name="plant" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 21 )
+
+[node name="animated_sprite" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/attack = SubResource( 1 )
+anims/hurt = SubResource( 2 )
+anims/idle = SubResource( 3 )
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+position = Vector2( 4.5, 4.4 )
+shape = SubResource( 4 )
+
+[node name="hitbox" parent="." instance=ExtResource( 70 )]
+modulate = Color( 0, 0.00784314, 1, 1 )
+position = Vector2( 4.61167, -13.7402 )
+scale = Vector2( 0.8, 0.5 )
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="hit" type="AudioStreamPlayer2D" parent="music"]
+stream = ExtResource( 72 )
+
+[node name="spawn_shoot" type="Position2D" parent="."]
+position = Vector2( -20, -2 )
+
+[node name="player_detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collision_shape" type="CollisionShape2D" parent="player_detector"]
+position = Vector2( 3, -22 )
+shape = SubResource( 5 )
+
+[node name="timers" type="Node2D" parent="."]
+
+[node name="timer_damage" type="Timer" parent="timers"]
+wait_time = 0.209
+one_shot = true
+
+[node name="timer_dead" type="Timer" parent="timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="timer_shoot" type="Timer" parent="timers"]
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="player_detector" to="." method="_on_player_detector_body_exited"]
+[connection signal="timeout" from="timers/timer_damage" to="." method="_on_timer_damage_timeout"]
+[connection signal="timeout" from="timers/timer_dead" to="." method="_on_timer_dead_timeout"]
+[connection signal="timeout" from="timers/timer_shoot" to="." method="_on_timer_shoot_timeout"]

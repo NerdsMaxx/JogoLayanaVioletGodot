@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/09.2_LOOP_Silly_Talk_by_Florian_Stracker.mp3-5a6573f4f0c7b88b1a9bfd152d134575.mp3str"
+
+[deps]
+
+source_file="res://music/09.2_LOOP_Silly_Talk_by_Florian_Stracker.mp3"
+dest_files=[ "res://.import/09.2_LOOP_Silly_Talk_by_Florian_Stracker.mp3-5a6573f4f0c7b88b1a9bfd152d134575.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
