@@ -19,7 +19,7 @@ O jogo foi feito pela equipe Cachorro Pirata. Os membros são Guilherme Henrique
 ## Equipe:  
 Guilherme Henrique (eu)  
 Márcio Antusa  
-Watyson Soares  
+Watyson Soares (https://github.com/Watyson)  
 
 # Para executar  
 
