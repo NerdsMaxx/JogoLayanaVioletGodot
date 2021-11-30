@@ -17,6 +17,11 @@ O jogo foi feito pela equipe Cachorro Pirata. Os membros são Guilherme Henrique
 ![WhatsApp Image 2021-08-22 at 21 34 36](https://user-images.githubusercontent.com/69761459/144127467-088953e9-5df6-4a9b-b54e-d0869fac3e83.jpeg)
 
 ## Equipe:  
-Guilherme Henrique (eu)
+Guilherme Henrique (eu)  
 Márcio Antusa  
 Watyson Soares  
+
+# Para executar  
+
+Basta baixar o executável e abrir no Windows.  
+Link -> https://github.com/NerdsMaxx/JogoLayanaVioletGodot/blob/main/Layana%20Violet%20-%20The%20Rescue.exe
